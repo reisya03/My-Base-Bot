@@ -1,5 +1,5 @@
 /*
-
+GITHUB : https://github.com/Tama-Ryuichi
 const { default :
 Type Case,
 Simple Base
