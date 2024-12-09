@@ -1,6 +1,6 @@
 {
-  "name": "Finix",
-  "version": "7.0.0",
+  "name": "Base Bot WhatsApp",
+  "version": "9.9.9",
   "description": "Base Bot Javascript WhatsApp By Tama Ryuichi",
   "main": "start.js",
   "type": "commonjs",
