@@ -133,4 +133,17 @@ async function writeExif (media, metadata) {
     }
 }
 
-module.exports = { imageToWebp, videoToWebp, writeExifImg, writeExifVid, writeExif }
+async function addExif(webpSticker, packname, author, categories = [''], extra = {}) {
+  const img = new webp.Image();
+  const stickerPackId = Crypto.randomBytes(32).toString('hex');
+  const json = { 'sticker-pack-id': stickerPackId, 'sticker-pack-name': packname, 'sticker-pack-publisher': author, 'emojis': categories, ...extra };
+  let exifAttr = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00]);
+  let jsonBuffer = Buffer.from(JSON.stringify(json), 'utf8');
+  let exif = Buffer.concat([exifAttr, jsonBuffer]);
+  exif.writeUIntLE(jsonBuffer.length, 14, 4);
+  await img.load(webpSticker)
+  img.exif = exif
+  return await img.save(null)
+}
+
+module.exports = { imageToWebp, videoToWebp, writeExifImg, writeExifVid, writeExif, addExif }
