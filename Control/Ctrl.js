@@ -6,8 +6,8 @@ global.connect = true // True For Pairing // False For Qr
 global.publicX = true // True For Public // False For Self
 global.owner = ['6285727819741'] //Own Number
 global.developer = "Tama Ryuichi" //Dev Name
-global.botname = "Bot WhstApp" //Bot Name
-global.version = "9.7.4.1" //Version Bot
+global.botname = "Finix" //Bot Name
+global.version = "0.0.0" //Version Bot
 
 //Sticker Setiings
 global.packname = "Sticker By" //Pack Name 
