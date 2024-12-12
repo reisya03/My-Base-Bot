@@ -1,3 +1,4 @@
+console.clear();
 require('../Control/Ctrl')
 const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto, getAggregateVotesInPollMessage } = require("@whiskeysockets/baileys");
 const pino = require('pino')
@@ -21,6 +22,7 @@ return new Promise((resolve) => {
 rl.question(text, resolve)
 })
 };
+//===================
 async function connectToWhatsApp() {
 const { state, saveCreds } = await useMultiFileAuthState("./session")
 const { version, isLatest } = await fetchLatestBaileysVersion();
@@ -40,6 +42,7 @@ if(usePairingCode && !TamaRYC.authState.creds.registered) {
 		console.log(`${code}`)
 }
 store.bind(TamaRYC.ev)
+//===================
 TamaRYC.ev.on('call', async (caller) => {
 console.log("Invite to Call")
 })
