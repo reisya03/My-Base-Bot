@@ -139,6 +139,28 @@ module.exports = TamaRYC = async (TamaRYC, m, chatUpdate, store) => {
                         body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" 
                       : global.prefa ?? global.prefix
 
+
+//END
+//DATA TAMBAHAN + PELENGKAP
+	    
+const { 
+smsg, 
+tanggal, 
+getTime, 
+isUrl, 
+sleep, 
+clockString, 
+runtime, 
+fetchJson, 
+getBuffer, 
+jsonformat, 
+format, 
+parseMention, 
+getRandom, 
+getGroupAdm, 
+generateProfilePicture 
+} = require('../System/Data1')
+
 //END
 //DATA USER + DATA MESSAGE
 
@@ -168,26 +190,6 @@ const mime = (quoted.msg || quoted).mimetype || ''
 //DATA TIKTOK SCRAPER
 
 const { tiktok } = require('../System/Data5')
-
-//END
-//DATA TAMBAHAN + PELENGKAP
-const { 
-smsg, 
-tanggal, 
-getTime, 
-isUrl, 
-sleep, 
-clockString, 
-runtime, 
-fetchJson, 
-getBuffer, 
-jsonformat, 
-format, 
-parseMention, 
-getRandom, 
-getGroupAdm, 
-generateProfilePicture 
-} = require('../System/Data1')
 
 //END
 //EXPORTS MODULE BRAT + STICKER
